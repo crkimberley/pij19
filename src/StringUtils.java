@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -19,12 +20,10 @@ class StringUtils {
     }
 
     static List<String> allMatches(List<String> strings, Predicate<String> stringTest) {
-        List<String> matches = new ArrayList<>();
-        /*for (String s : strings) {
-            if (stringTest.test(s)) matches.add(s);
-        }*/
-        // Using streams
-        matches = strings.stream().filter(stringTest).collect(Collectors.toList());
-        return matches;
+        return strings.stream().filter(stringTest).collect(Collectors.toList());
+    }
+
+    static List<String> transformedList(List<String> strings, Function<String,String> transformer) {
+        return strings.stream().map(transformer).collect(Collectors.toList());
     }
 }

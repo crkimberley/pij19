@@ -13,12 +13,6 @@ class ElementUtils {
     }
 
     static <T> List<T> allMatches(List<T> elements, Predicate<T> elementTest) {
-        List<T> matches = new ArrayList<>();
-        /*for (element s : elements) {
-            if (elementTest.test(s)) matches.add(s);
-        }*/
-        // Using streams
-        matches = elements.stream().filter(elementTest).collect(Collectors.toList());
-        return matches;
+        return elements.stream().filter(elementTest).collect(Collectors.toList());
     }
 }
