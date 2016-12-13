@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -14,5 +15,9 @@ class ElementUtils {
 
     static <T> List<T> allMatches(List<T> elements, Predicate<T> elementTest) {
         return elements.stream().filter(elementTest).collect(Collectors.toList());
+    }
+
+    static <T,R> List<R> transformedList(List<T> elements, Function<T,R> transformer) {
+        return elements.stream().map(transformer).collect(Collectors.toList());
     }
 }

@@ -15,10 +15,17 @@ public class Transform {
         System.out.println(words);
 
         List<String> excitingWords = StringUtils.transformedList(words, s -> s + "!");
-        System.out.println("excitingWords" + excitingWords);
+        System.out.println("excitingWords: " + excitingWords);
         List<String> eyeWords = StringUtils.transformedList(words, s -> s.replace("i", "eye"));
-        System.out.println("eyeWords" + eyeWords);
+        System.out.println("eyeWords: " + eyeWords);
         List<String> upperCaseWords = StringUtils.transformedList(words, String::toUpperCase);
-        System.out.println("upperCaseWords" + upperCaseWords);
+        System.out.println("upperCaseWords: " + upperCaseWords);
+
+        List<String> excitingWords2 = ElementUtils.transformedList(words, s -> s + "!");
+        System.out.println("(generics) excitingWords2: " + excitingWords2);
+        List<String> eyeWords2 = ElementUtils.transformedList(words, s -> s.replace("i", "eye"));
+        System.out.println("(generics) eyeWords2: " + eyeWords2);
+        List<String> upperCaseWords2 = ElementUtils.transformedList(words, String::toUpperCase);
+        System.out.println("(generics) upperCaseWords2: " + upperCaseWords2);
     }
 }
