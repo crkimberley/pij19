@@ -20,5 +20,12 @@ public class Matches {
         System.out.println("wordsWithB: " + wordsWithB);
         List<String> evenLengthWords = StringUtils.allMatches(words, s -> (s.length() % 2) == 0);
         System.out.println("evenLengthWords: " + evenLengthWords);
+
+        List<String> shortWords2 = ElementUtils.allMatches(words, s -> s.length() < 4);
+        System.out.println("(generics) shortWords2: " + shortWords2);
+        List<String> wordsWithB2 = ElementUtils.allMatches(words, s -> s.contains("b"));
+        System.out.println("(generics) wordsWithB2: " + wordsWithB2);
+        List<String> evenLengthWords2 = ElementUtils.allMatches(words, s -> (s.length() % 2) == 0);
+        System.out.println("(generics) evenLengthWords2: " + evenLengthWords2);
     }
 }

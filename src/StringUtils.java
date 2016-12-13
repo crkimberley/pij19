@@ -20,11 +20,11 @@ class StringUtils {
 
     static List<String> allMatches(List<String> strings, Predicate<String> stringTest) {
         List<String> matches = new ArrayList<>();
-        for (String s : strings) {
+        /*for (String s : strings) {
             if (stringTest.test(s)) matches.add(s);
-        }
-        return matches;
+        }*/
         // Using streams
-        // matches = strings.stream().filter(stringTest::test).collect(Collectors.toList());
+        matches = strings.stream().filter(stringTest).collect(Collectors.toList());
+        return matches;
     }
 }
